@@ -1,3 +1,7 @@
 def solution(arr):
-    answer=sum(arr)/len(arr)
+    answer = 0
+    for i in arr:
+        answer+=i
+    size=len(arr)
+    answer=answer/size
     return answer
