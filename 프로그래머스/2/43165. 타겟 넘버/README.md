@@ -1,10 +1,10 @@
 # [level 2] 타겟 넘버 - 43165 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/43165?language=java) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/43165?language=python3) 
 
 ### 성능 요약
 
-메모리: 91.6 MB, 시간: 10.22 ms
+메모리: 9.23 MB, 시간: 411.62 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2025년 02월 25일 15:36:30
+2025년 10월 22일 22:01:05
 
 ### 문제 설명
 
