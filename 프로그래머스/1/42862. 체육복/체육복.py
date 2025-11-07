@@ -1,19 +1,14 @@
 def solution(n, lost, reserve):
-    answer = 0
-    con_lost=list(set(lost)-set(reserve))
-    con_reserve=list(set(reserve)-set(lost))
-    
-    for i in range(n):
-        if not i+1 in con_lost:
-            answer+=1
-    
-    for i in range(len(con_reserve)):
-        if con_reserve[i]-1 in con_lost:
-            con_lost.remove(con_reserve[i]-1)
-            answer+=1
-        elif con_reserve[i]+1 in con_lost:
-            con_lost.remove(con_reserve[i]+1)
-            answer+=1
-                
-    
-    return answer
+    # 도난도 당하고 여벌도 있는 학생은 제외 (자기 것만 있음)
+    lost_set = set(lost) - set(reserve)
+    reserve_set = set(reserve) - set(lost)
+
+    # 여벌 있는 학생이 앞 번호 → 뒷 번호 순서로 체육복 빌려주기
+    for r in sorted(reserve_set):
+        if r - 1 in lost_set:
+            lost_set.remove(r - 1)
+        elif r + 1 in lost_set:
+            lost_set.remove(r + 1)
+
+    # 수업 들을 수 있는 학생 수 = 전체 - 아직도 체육복 없는 사람 수
+    return n - len(lost_set)
