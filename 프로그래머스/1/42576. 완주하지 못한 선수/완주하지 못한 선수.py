@@ -1,14 +1,23 @@
+# def solution(participant, completion):
+#     answer={}
+#     for p in participant:
+#         if p in answer:
+#             answer[p]+=1
+#         else:
+#             answer[p]=1
+#     for c in completion:
+#         answer[c]-=1
+#     return ''.join(name for name in answer if answer[name]==1)
+
 def solution(participant, completion):
-
-    part = {}
-
+    answer={}
     for p in participant:
-        if p in part : 
-            part[p] += 1
-        else : 
-            part[p] = 1
-
+        if p in answer:
+            answer[p]+=1
+        else:
+            answer[p]=1
     for c in completion:
-        part[c] -= 1
+        if c in answer:
+            answer[c]-=1
+    return ''.join(a for a in answer if answer[a]==1)
 
-    return ''.join([name for name in part if part[name] == 1])
