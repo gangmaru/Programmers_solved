@@ -50,8 +50,8 @@ dx = [0, 0, 1, -1]  # 동서남북
 dy = [1, -1, 0, 0]
 
 def bfs(start, maps):
-    n = len(maps)        # 세로 길이
-    m = len(maps[0])     # 가로 길이
+    n = len(maps)        # 세로 길이 col
+    m = len(maps[0])     # 가로 길이 row
 
     q = deque([start])
     visited = [[0]*m for _ in range(n)]  # 방문 + 거리 기록용
@@ -72,7 +72,7 @@ def bfs(start, maps):
             if nx < 0 or nx >= m or ny < 0 or ny >= n:
                 continue
             # 벽(0)이거나 이미 방문했다면 무시
-            if maps[ny][nx] == 0 or visited[ny][nx] != 0:
+            if maps[ny][nx] == 0 or visited[ny][nx]:
                 continue
 
             # 다음 칸 방문, 거리 +1
